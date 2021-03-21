@@ -1,0 +1,8 @@
+﻿Select * from table_name limit (record_for_page) offset (page_number-1)*record_for_page;
+ví dụ hiển thị 30 nhan vien từ bảng nhanvien moi trang hien thi 30 nguoi thi minh lam nhu sau:
+select nhanvien_name from nhan_vien limit recoder_for_page=10 offset record_for_page -1 * record_for_page;
+thay vao cong thuc ta có:
+voi trang thu 1:
+select nhanvien_name from nhan_vien limit 10 offset (1-1)*10=0 ; thi se lay ket qua la 
+select nhanvien_name from nhan_vien limit 10 offset 0;
+thi se lay 10 ket qua tu hang thu 1; => ok roi!..
